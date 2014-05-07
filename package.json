@@ -1,0 +1,12 @@
+{
+  "name": "mangrove-1",
+  "description": "Primary Server",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "body-parser": "~1.0.0",
+    "bunyan": "~0.22.3",
+    "express": "4.x",
+    "request": "^2.34.0"
+  }
+}
