@@ -12,8 +12,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(bodyParser());
-app.use(require('stylus').middleware(path.join(__dirname, './lib/assets')));
-app.use(express.static(path.join(__dirname, './lib/assets')));
+app.use(require('stylus').middleware(path.join(__dirname, './src/public')));
+app.use(express.static(path.join(__dirname, './src/public')));
 app.use('/', routes);
 
 app.set('port', process.env.PORT || 3000);
