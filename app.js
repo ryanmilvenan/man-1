@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 
 //CONFIG
-var app = express();
+app = express();
 app.enable('trust proxy');
 
 // view engine setup
@@ -26,8 +26,16 @@ app.use(function(err, req, res, next){
   res.send(500, 'Something broke!');
 });
 
+var io = require('socket.io')(server);
+
+io.on('connection', function(socket) {
+    console.log('a user connection');
+    socket.on('disconnect', function() {
+        console.log('user disconnected')
+    })
+});
+
 module.exports = {
   app: app,
   server: server
 }
-
